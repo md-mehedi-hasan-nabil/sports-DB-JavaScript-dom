@@ -1,0 +1,21 @@
+#players-container {
+  column-count: 3;
+  column-gap: 20px;
+}
+
+#players-container .card {
+  break-inside: avoid;
+  margin: 0 0 10px;
+}
+
+@media (max-width: 1200px) {
+  #players-container {
+    column-count: 2;
+  }
+}
+
+@media (max-width: 800px) {
+  #players-container {
+    column-count: 1;
+  }
+}

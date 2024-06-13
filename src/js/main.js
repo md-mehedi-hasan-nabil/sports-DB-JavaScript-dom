@@ -48,7 +48,11 @@ async function handleSearchButton() {
   renderPlayers();
 }
 
-function handleAddGroup(name) {
+function handleAddGroup(button, name) {
+  button.innerText = "Already added"
+  button.className = "btn btn-danger"
+  button.disabled = true;
+
   select_players.push(name);
 
   if (select_players.length < 12) {
@@ -123,7 +127,7 @@ function playerCard(playerData) {
                 <p><b>Location: </b> ${strBirthLocation}</p>
             </div>
 
-            <button class="btn btn-primary" onclick="handleAddGroup('${strPlayer}')">Add to Group</button>
+            <button class="btn btn-primary" onclick="handleAddGroup(this, '${strPlayer}')">Add to Group</button>
             <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#${idPlayer}">
                 Details
             </button>
